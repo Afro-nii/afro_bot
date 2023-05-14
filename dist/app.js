@@ -1,4 +1,4 @@
-fetch('./src/app/config/config-validator.js')
+fetch('./src/app/config/1config-validator.js')
   .then(response => response.text())
   .then(text => eval(text))
   .then(ConfigValidator => {
