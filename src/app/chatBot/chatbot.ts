@@ -20,6 +20,8 @@ export class TwitchChatBot {
 
      fs = require('fs');
 
+    mysql = require('mysql2/promise');
+
       path = require('path');
 
      ArrayList = require('arraylist');
@@ -31,18 +33,12 @@ export class TwitchChatBot {
       fetch = require('node-fetch');
 
 
-
- mysql = require('mysql');
-  connection = this.mysql.createConnection({
-  host: 'sql205.epizy.com',
-  user: 'epiz_34199892',
-  password: 'Afro@nii12',
-  database: 'epiz_34199892_Afro_Bot_Database'
+    const pool = mysql.createPool({
+  host: 'localhost',
+  user: 'myuser',
+  password: 'mypassword',
+  database: 'mydatabase'
 });
-
-
-// Close the connection
-
 
 
 

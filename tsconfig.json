@@ -10,5 +10,7 @@
         "experimentalDecorators": true,
         "resolveJsonModule": true,
         "noImplicitAny": false,
+        "noEmit": true,
+        "allowImportingTsExtensions": true
       }
 }
