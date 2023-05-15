@@ -1,8 +1,8 @@
-fetch('./src/app/config/config-validator.js')
+fetch('./dist/src/app/config/config-validator.js')
   .then(response => response.text())
   .then(text => eval(text))
   .then(ConfigValidator => {
-    return fetch('./src/app/chatBot/chatbot.js')
+    return fetch('./dist/src/app/chatBot/chatbot.js')
       .then(response => response.text())
       .then(text => {
         eval(text);
