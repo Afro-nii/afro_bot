@@ -1,4 +1,4 @@
-/*fetch('./dist/src/app/config/1config-validator.js')
+fetch('./dist/src/app/config/1config-validator.js')
   .then(response => response.text())
   .then(text => eval(text))
   .then(ConfigValidator => {
@@ -9,13 +9,13 @@
         return ConfigValidator.readConfig('./config.json')
           .then(config => new TwitchChatBot(config).launch());
       });
-  });*/
-  import { ChatBotConfig } from './src/app/config/config.model';
+  });
+  /*import { ChatBotConfig } from './src/app/config/config.model';
   import { ConfigValidator } from './src/app/config/config-validator';
   import { TwitchChatBot } from './src/app/chatBot/chatbot';
   
   ConfigValidator.readConfig('./config.json')
-    .then((config) => new TwitchChatBot(config).launch())
+    .then((config) => new TwitchChatBot(config).launch())*/
 
 /*
 "use strict";
