@@ -1,6 +1,6 @@
 
-import { ChatBotConfig } from './src/app/config/config.model.ts';
-import { ConfigValidator } from './src/app/config/config-validator.ts';
+import { ChatBotConfig } from './src/app/config/config.model';
+import { ConfigValidator } from './src/app/config/config-validator';
 import { TwitchChatBot } from './src/app/chatBot/chatbot';
 
 

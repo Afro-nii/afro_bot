@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node ./dist/app.js"
+    "start": "tsc && node ./dist/app.js",
+    "build": "babel src -d dist"
   },
   "dependencies": {
+    "@babel/cli": "^7.21.5",
     "arraylist": "^0.1.0",
     "axios": "^0.24.0",
     "class-transformer": "^0.5.1",
