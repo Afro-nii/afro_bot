@@ -1,4 +1,4 @@
-const TwitchTokenResponseValidator = require("./../utils/TwitchTokenResponseValidator");
+//const TwitchTokenResponseValidator = require("./../utils/TwitchTokenResponseValidator");
 const error_model_1 = require("../models/error.model");
 const fs = require("fs");
 const fetch = require('node-fetch');
