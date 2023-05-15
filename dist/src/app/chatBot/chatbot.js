@@ -19,7 +19,6 @@ class TwitchChatBot {
     this.ArrayList = require('arraylist');
     this.list = [];
     this.QuotesArray = [];
-    this.accessToken = null;
     this.refreshToken = "n7rn1b62quvmom2x2vknqw1usx8qh5q9ra54ogt4fo41tk0si8";
   }
 
@@ -87,13 +86,95 @@ class TwitchChatBot {
       });
   }
 
-  setupBotBehavior() {
+   setupBotBehavior() {
     this.twitchClient.on('message', (channel, tags, message, self) => {
-      if (self) return;
-      // Bot behavior code goes here
-    });
-  }
 
+        if(self) return;
+
+        let helloCommand = "!hello"
+        let AfroSizeCommand = "!afroSize"
+        let addDadjoke = "!addDadjoke "
+
+        if(message.startsWith('!ban')){
+          let copiedMessage = message.slice(6);
+          this.twitchClient.say(channel, `WOT! ${ tags.username }! just yeeted ` + copiedMessage + ` into the abyss foreva and eva`);
+}
+
+         if(message.startsWith('!despair'))
+            this.twitchClient.say(channel, 'Everything is going to be okay my little Pogchamp. Dont break yo little head over it, will you? <3 <3');
+
+        if(channel === 'mukimooki'){
+        messageCounterMooki++
+        if(messageCounterMooki === 30){
+            this.twitchClient.say(channel, 'QUASO');
+}
+}
+
+
+         if (message.startsWith('!addDadjoke ') && tags.user === "afronii"){
+            var copiedMessage = message.slice(12);
+        console.log(copiedMessage);
+            if (copiedMessage) {
+this.SaveJoke(copiedMessage);
+this.twitchClient.say(channel, copiedMessage + ' officially been added');
+}}
+//if(message === '!clip')
+//this.handleClipCommand(channel, authorizationCode, tags);
+
+        if(message.startsWith('!so ')){
+            const copiedMessage = message.slice(5);
+            this.twitchClient.say(channel, 'Go check out this lovely bean @' + copiedMessage + ' at twitch.tv/' + copiedMessage);
+
+}
+
+        if(message.startsWith('!join ') && channel === '#afronii'){
+            var joinChannel = message.slice(6);
+            this.twitchClient.join(joinChannel);
+            this.twitchClient.say(channel, joinChannel + ' was added');
+       }
+        else if(message.startsWith('!leave ')  && channel === '#afronii'){
+                var leaveChannel = message.slice(7);
+                this.twitchClient.part(leaveChannel);
+                this.twitchClient.say(channel, leaveChannel + 'was added');
+
+}
+
+        if(message.endsWith('Kappa')){
+          this.twitchClient.say(channel, 'KappaRoss *');}
+
+         if(message.startsWith('!dadjoke'))
+         this.giveDadjoke(channel);
+
+
+        //! means a command is coming by, and we check if it matches the command we currently support
+        if(message.startsWith('Right') || message.startsWith('right') || message.endsWith('right?'))
+            this.youRight(channel, tags);
+
+
+            if(message === helloCommand)
+            this.sayHelloToUser(channel,tags);
+            else if(message === AfroSizeCommand)
+            this.afroSize(channel, tags);
+
+    });
+}
+
+ giveDadjoke(channel){
+ var Dadjoke = this.QuotesArray[Math.floor(Math.random() * this.QuotesArray.length)]
+ this.twitchClient.say(channel, `` + Dadjoke + ``);
+
+}
+ sayHelloToUser(channel, tags) {
+        this.twitchClient.say(channel, `Hello, ${ tags.username }! Welcome to the channel.`);
+}
+
+ youRight(channel, tags){
+   this.twitchClient.say(channel, `The great me agrees, so you must be right!!! CoolCat ${tags.username } `);
+}
+ afroSize(channel, tags){
+     var Size = Math.floor(Math.random() * 100)
+     this.twitchClient.say(channel, `AYO! ${tags.username} HAS A `+ Size + ` METER IN DIAMETER AFRO PogChamp . So proud rn`)
+}
   // Rest of the class methods...
 
   buildConnectionConfig(channel, username, accessToken) {
