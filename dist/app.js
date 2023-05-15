@@ -1,4 +1,4 @@
-import { TwitchChatBot } from "./dist/src/app/chatBot/chatbot.js";
+/*import { TwitchChatBot } from "./dist/src/app/chatBot/chatbot.js";
 import { ConfigValidator } from './dist/src/app/config/config-validator.js';
 
 fetch('./dist/src/app/config/config-validator.js')
@@ -16,13 +16,13 @@ fetch('./dist/src/app/config/config-validator.js')
   .catch(error => {
     console.error('Error:', error);
   });
+*/
 
 
 
 
 
-
-/*fetch('./dist/src/app/config/config-validator.js')
+fetch('./dist/src/app/config/config-validator.js')
   .then(response => response.text())
   .then(text => eval(text))
   .then(ConfigValidator => {
@@ -33,7 +33,7 @@ fetch('./dist/src/app/config/config-validator.js')
         return ConfigValidator.readConfig('./config.json')
           .then(config => new TwitchChatBot(config).launch());
       });
-  });*/
+  });
 
 
 

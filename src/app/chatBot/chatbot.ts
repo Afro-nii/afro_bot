@@ -33,7 +33,7 @@ export class TwitchChatBot {
       fetch = require('node-fetch');
 
 
-    const pool = mysql.createPool({
+     pool = mysql.createPool({
   host: 'localhost',
   user: 'myuser',
   password: 'mypassword',
