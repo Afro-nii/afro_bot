@@ -7,7 +7,7 @@ const tokenEndpoint = "https://id.twitch.tv/oauth2/token";
 const username="Afro_Bot";
 const client_id= "k4uqzbdlsoc22ikebwthjtibse44qp";
 const client_secret="oou8moe5btauciufkisnjsit629m29";
-const authorization_code="jflob0wbi1g58wuljsrmr71gyfbdc1";
+const authorization_code="4glirz5ljttt9y4d9gs2fy8taisn03";
 const  channel = "afronii";
 
 
