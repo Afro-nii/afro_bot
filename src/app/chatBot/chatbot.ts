@@ -75,7 +75,7 @@ export class TwitchChatBot {
 
     private async fetchAccessToken(): Promise<TwitchTokenDetails> {
         const axios = require('axios');
-        this.refreshTokenIfNeeded();
+       // this.refreshTokenIfNeeded();
         console.log("Fetching Twitch OAuth Token");
         return axios({
             method: 'post',
@@ -110,7 +110,7 @@ export class TwitchChatBot {
         })
     }
 
-private refreshTokenIfNeeded() {
+/*private refreshTokenIfNeeded() {
     const axios = require('axios');
    axios.post('https://id.twitch.tv/oauth2/token', null, {
     params: {    grant_type: 'refresh_token',
@@ -123,7 +123,7 @@ private refreshTokenIfNeeded() {
             .catch(error => {  console.error(error);});
 
 //TODO if needed - twitch apparently only requires the token on login so it is good enough for now to just get a token on start-up.
-    }
+    }*/
 
     private setupBotBehavior() {
         this.twitchClient.on('message', (channel: any, tags: any, message: any, self: any) => {
@@ -221,7 +221,7 @@ private refreshTokenIfNeeded() {
     fs.writeFileSync('QuoteList.js', listString, 'utf-8');
   }
 
-    public handleClipCommand(channel : any , accessToken, tags : any) {
+    public handleClipCommand(channel : any , accessToken: any, tags : any) {
 
 
     const headers = {
@@ -239,14 +239,14 @@ private refreshTokenIfNeeded() {
     });
 }
 
-     public async fetchBroadcasterId(channelName, accessToken) {
+     public async fetchBroadcasterId(channelName: any, accessToken: any) {
   const url = `https://api.twitch.tv/helix/users?login=${channelName}`;
   const headers = {
     'Authorization': `Bearer ${accessToken}`,
     'Client-ID': this.config.twitchClientId,
   };
   try {
-    const response = await fetch(url, { headers });
+    const response = await this.fetch(url, { headers });
     const data = await response.json();
 
      console.log(data);
@@ -266,7 +266,7 @@ private refreshTokenIfNeeded() {
 
 
 
-    public async createClip(channelName, accessToken) {
+    public async createClip(channelName: any, accessToken: any) {
   try {
     const broadcasterId = await this.fetchBroadcasterId(channelName, accessToken);
     const url = `https://api.twitch.tv/helix/clips?broadcaster_id=${broadcasterId}`;
@@ -278,7 +278,7 @@ private refreshTokenIfNeeded() {
     const body = {
       'has_delay': false
     };
-    const response = await fetch(url, { method: 'Post', headers, body: JSON.stringify(body) });
+    const response = await this.fetch(url, { method: 'Post', headers, body: JSON.stringify(body) });
     const data = await response.json();
     if (typeof data !== 'undefined' && data.data.length > 0) {
       return data.data[0].edit_url;
