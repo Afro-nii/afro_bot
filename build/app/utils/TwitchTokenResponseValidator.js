@@ -34,43 +34,41 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-define(["require", "exports", "./../models/twitchTokenDetails.models", "class-validator", "../models/error.model"], function (require, exports, twitchTokenDetails_models_1, class_validator_1, error_model_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.TwitchTokenResponseValidator = void 0;
-    var TwitchTokenResponseValidator = /** @class */ (function () {
-        function TwitchTokenResponseValidator() {
-        }
-        TwitchTokenResponseValidator.parseResponse = function (responseBody) {
-            return __awaiter(this, void 0, void 0, function () {
-                var tokenResponse, tokenDetails, completeConfigErrors, err_1;
-                return __generator(this, function (_a) {
-                    switch (_a.label) {
-                        case 0:
-                            tokenResponse = JSON.parse(JSON.stringify(responseBody));
-                            _a.label = 1;
-                        case 1:
-                            _a.trys.push([1, 3, , 4]);
-                            console.info("Validating Twitch Response");
-                            tokenDetails = new twitchTokenDetails_models_1.TwitchTokenDetails(tokenResponse.access_token, tokenResponse.refresh_token, tokenResponse.expires_in, tokenResponse.scope, tokenResponse.token_type);
-                            return [4 /*yield*/, (0, class_validator_1.validate)(tokenDetails)];
-                        case 2:
-                            completeConfigErrors = _a.sent();
-                            if (completeConfigErrors.length > 0)
-                                throw new error_model_1.InvalidTwitchResponseError("The answer from twitch token endpoint is not valid, \n                here are the issues: ".concat(completeConfigErrors.join()));
-                            console.info("Twitch Response is valid.");
-                            return [2 /*return*/, tokenDetails];
-                        case 3:
-                            err_1 = _a.sent();
-                            if (err_1 instanceof error_model_1.InvalidTwitchResponseError)
-                                console.log(err_1.message);
-                            throw err_1;
-                        case 4: return [2 /*return*/];
-                    }
-                });
+import { TwitchTokenDetails } from './../models/twitchTokenDetails.models';
+import { validate } from "class-validator";
+import { InvalidTwitchResponseError } from '../models/error.model';
+var TwitchTokenResponseValidator = /** @class */ (function () {
+    function TwitchTokenResponseValidator() {
+    }
+    TwitchTokenResponseValidator.parseResponse = function (responseBody) {
+        return __awaiter(this, void 0, void 0, function () {
+            var tokenResponse, tokenDetails, completeConfigErrors, err_1;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        tokenResponse = JSON.parse(JSON.stringify(responseBody));
+                        _a.label = 1;
+                    case 1:
+                        _a.trys.push([1, 3, , 4]);
+                        console.info("Validating Twitch Response");
+                        tokenDetails = new TwitchTokenDetails(tokenResponse.access_token, tokenResponse.refresh_token, tokenResponse.expires_in, tokenResponse.scope, tokenResponse.token_type);
+                        return [4 /*yield*/, validate(tokenDetails)];
+                    case 2:
+                        completeConfigErrors = _a.sent();
+                        if (completeConfigErrors.length > 0)
+                            throw new InvalidTwitchResponseError("The answer from twitch token endpoint is not valid, \n                here are the issues: ".concat(completeConfigErrors.join()));
+                        console.info("Twitch Response is valid.");
+                        return [2 /*return*/, tokenDetails];
+                    case 3:
+                        err_1 = _a.sent();
+                        if (err_1 instanceof InvalidTwitchResponseError)
+                            console.log(err_1.message);
+                        throw err_1;
+                    case 4: return [2 /*return*/];
+                }
             });
-        };
-        return TwitchTokenResponseValidator;
-    }());
-    exports.TwitchTokenResponseValidator = TwitchTokenResponseValidator;
-});
+        });
+    };
+    return TwitchTokenResponseValidator;
+}());
+export { TwitchTokenResponseValidator };

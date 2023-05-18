@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A Chat Bot application for Twitch Channel Chats.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "tsc && node ./dist/app.js",
     "build": "rollup -c"
@@ -28,7 +29,7 @@
     "@types/node": "^16.18.26",
     "@types/validator": "^13.7.17",
     "eslint": "^8.4.0",
-    "rollup": "^3.21.8",
+    "rollup": "^3.22.0",
     "source-map-support": "^0.5.21",
     "ts-loader": "^9.4.2",
     "typescript": "^4.9.5",
