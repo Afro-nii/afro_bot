@@ -34,10 +34,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-import { TwitchTokenResponseValidator } from './../utils/TwitchTokenResponseValidator';
-import { MalformedTwitchRequestError, NoTwitchResponseError, TwitchResponseError } from '../models/error.model';
+import { TwitchTokenResponseValidator } from './../utils/TwitchTokenResponseValidator.js';
+import { MalformedTwitchRequestError, NoTwitchResponseError, TwitchResponseError } from '../models/error.model.js';
 //import * as BrowserFS from 'browserfs';
-import { configure } from '/browserfs/dist/node/index';
+//import { configure } from '/browserfs/dist/node/index';
 const fs = BrowserFS.BFSRequire('fs');
 //import fs from 'fs';
 var authorizationCode;
