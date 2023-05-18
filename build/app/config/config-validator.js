@@ -34,9 +34,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-import { InvalidTwitchConfigError } from './../models/error.model';
+import { InvalidTwitchConfigError } from './../models/error.model.js';
 import { validate } from "class-validator";
-import { ChatBotConfig } from "./config.model";
+import { ChatBotConfig } from "./config.model.js";
 var ConfigValidator = /** @class */ (function () {
     function ConfigValidator() {
     }

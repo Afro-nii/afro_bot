@@ -1,6 +1,6 @@
-import { InvalidTwitchConfigError } from './../models/error.model';
+import { InvalidTwitchConfigError } from './../models/error.model.js';
 import { validate } from "class-validator";
-import { ChatBotConfig } from "./config.model"
+import { ChatBotConfig } from "./config.model.js"
 
 
 export class ConfigValidator {
