@@ -36,7 +36,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 import { TwitchTokenResponseValidator } from './../utils/TwitchTokenResponseValidator';
 import { MalformedTwitchRequestError, NoTwitchResponseError, TwitchResponseError } from '../models/error.model';
-import fs from 'fs';
+import * as BrowserFS from 'browserfs';
+import { configure } from 'browserfs/dist/node/index';
+const fs = BrowserFS.BFSRequire('fs');
+//import fs from 'fs';
 var authorizationCode;
 var messageCounterMooki = 0;
 var refreshToken;

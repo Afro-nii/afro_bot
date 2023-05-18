@@ -35,7 +35,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 import { InvalidTwitchConfigError } from './../models/error.model.js';
-import { validate } from "class-validator";
+//import { validate } from "class-validator";
+const validate = require('class-validator');
 import { ChatBotConfig } from "./config.model.js";
 var ConfigValidator = /** @class */ (function () {
     function ConfigValidator() {
