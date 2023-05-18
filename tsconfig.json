@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",                          
-    "module": "commonjs",                    
+    "module": "AMD",                    
     "lib": ["es6"],                     
     "allowJs": true,
     "outDir": "build",                          
@@ -10,12 +10,18 @@
     "noImplicitAny": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "resolveJsonModule": true
+    "moduleResolution": "node"
   }
 }
 
 
 /*{
+
+  "resolveJsonModule": true
+
+  "module": "commonjs",  
+
+
     "compilerOptions": {
         "target": "es2016",
         "module": "commonjs",

@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -14,60 +13,63 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.MalformedTwitchRequestError = exports.TwitchResponseError = exports.InvalidTwitchResponseError = exports.NoTwitchResponseError = exports.InvalidTwitchConfigError = void 0;
-var InvalidTwitchConfigError = /** @class */ (function (_super) {
-    __extends(InvalidTwitchConfigError, _super);
-    function InvalidTwitchConfigError(errorMessage) {
-        var _this = _super.call(this) || this;
-        _this.name = 'InvalidTwitchConfigError';
-        _this.message = errorMessage;
-        return _this;
-    }
-    return InvalidTwitchConfigError;
-}(Error));
-exports.InvalidTwitchConfigError = InvalidTwitchConfigError;
-var NoTwitchResponseError = /** @class */ (function (_super) {
-    __extends(NoTwitchResponseError, _super);
-    function NoTwitchResponseError(errorMessage) {
-        var _this = _super.call(this) || this;
-        _this.name = 'NoTwitchResponseError';
-        _this.message = errorMessage;
-        return _this;
-    }
-    return NoTwitchResponseError;
-}(Error));
-exports.NoTwitchResponseError = NoTwitchResponseError;
-var InvalidTwitchResponseError = /** @class */ (function (_super) {
-    __extends(InvalidTwitchResponseError, _super);
-    function InvalidTwitchResponseError(errorMessage) {
-        var _this = _super.call(this) || this;
-        _this.name = 'InvalidTwitchResponseError';
-        _this.message = errorMessage;
-        return _this;
-    }
-    return InvalidTwitchResponseError;
-}(Error));
-exports.InvalidTwitchResponseError = InvalidTwitchResponseError;
-var TwitchResponseError = /** @class */ (function (_super) {
-    __extends(TwitchResponseError, _super);
-    function TwitchResponseError(errorMessage) {
-        var _this = _super.call(this) || this;
-        _this.name = 'TwitchResponseError';
-        _this.message = errorMessage;
-        return _this;
-    }
-    return TwitchResponseError;
-}(Error));
-exports.TwitchResponseError = TwitchResponseError;
-var MalformedTwitchRequestError = /** @class */ (function (_super) {
-    __extends(MalformedTwitchRequestError, _super);
-    function MalformedTwitchRequestError(errorMessage) {
-        var _this = _super.call(this) || this;
-        _this.name = 'MalformedTwitchRequestError';
-        _this.message = errorMessage;
-        return _this;
-    }
-    return MalformedTwitchRequestError;
-}(Error));
-exports.MalformedTwitchRequestError = MalformedTwitchRequestError;
+define(["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.MalformedTwitchRequestError = exports.TwitchResponseError = exports.InvalidTwitchResponseError = exports.NoTwitchResponseError = exports.InvalidTwitchConfigError = void 0;
+    var InvalidTwitchConfigError = /** @class */ (function (_super) {
+        __extends(InvalidTwitchConfigError, _super);
+        function InvalidTwitchConfigError(errorMessage) {
+            var _this = _super.call(this) || this;
+            _this.name = 'InvalidTwitchConfigError';
+            _this.message = errorMessage;
+            return _this;
+        }
+        return InvalidTwitchConfigError;
+    }(Error));
+    exports.InvalidTwitchConfigError = InvalidTwitchConfigError;
+    var NoTwitchResponseError = /** @class */ (function (_super) {
+        __extends(NoTwitchResponseError, _super);
+        function NoTwitchResponseError(errorMessage) {
+            var _this = _super.call(this) || this;
+            _this.name = 'NoTwitchResponseError';
+            _this.message = errorMessage;
+            return _this;
+        }
+        return NoTwitchResponseError;
+    }(Error));
+    exports.NoTwitchResponseError = NoTwitchResponseError;
+    var InvalidTwitchResponseError = /** @class */ (function (_super) {
+        __extends(InvalidTwitchResponseError, _super);
+        function InvalidTwitchResponseError(errorMessage) {
+            var _this = _super.call(this) || this;
+            _this.name = 'InvalidTwitchResponseError';
+            _this.message = errorMessage;
+            return _this;
+        }
+        return InvalidTwitchResponseError;
+    }(Error));
+    exports.InvalidTwitchResponseError = InvalidTwitchResponseError;
+    var TwitchResponseError = /** @class */ (function (_super) {
+        __extends(TwitchResponseError, _super);
+        function TwitchResponseError(errorMessage) {
+            var _this = _super.call(this) || this;
+            _this.name = 'TwitchResponseError';
+            _this.message = errorMessage;
+            return _this;
+        }
+        return TwitchResponseError;
+    }(Error));
+    exports.TwitchResponseError = TwitchResponseError;
+    var MalformedTwitchRequestError = /** @class */ (function (_super) {
+        __extends(MalformedTwitchRequestError, _super);
+        function MalformedTwitchRequestError(errorMessage) {
+            var _this = _super.call(this) || this;
+            _this.name = 'MalformedTwitchRequestError';
+            _this.message = errorMessage;
+            return _this;
+        }
+        return MalformedTwitchRequestError;
+    }(Error));
+    exports.MalformedTwitchRequestError = MalformedTwitchRequestError;
+});

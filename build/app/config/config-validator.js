@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,43 +34,43 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConfigValidator = void 0;
-var error_model_1 = require("./../models/error.model");
-var class_validator_1 = require("class-validator");
-var config_model_1 = require("./config.model");
-var ConfigValidator = /** @class */ (function () {
-    function ConfigValidator() {
-    }
-    ConfigValidator.readConfig = function (configPath) {
-        return __awaiter(this, void 0, void 0, function () {
-            var configJson, completeConfig, completeConfigErrors, err_1;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        configJson = JSON.parse(require('fs').readFileSync(configPath));
-                        _a.label = 1;
-                    case 1:
-                        _a.trys.push([1, 3, , 4]);
-                        console.info("Validating Config...");
-                        completeConfig = new config_model_1.ChatBotConfig(configJson.twitch.token_endpoint, configJson.twitch.username, configJson.twitch.client_id, configJson.twitch.client_secret, configJson.twitch.authorization_code, configJson.twitch.channel);
-                        return [4 /*yield*/, (0, class_validator_1.validate)(completeConfig)];
-                    case 2:
-                        completeConfigErrors = _a.sent();
-                        if (completeConfigErrors.length > 0)
-                            throw new error_model_1.InvalidTwitchConfigError("The provided mothership config is not valid, here are the issues: ".concat(completeConfigErrors.join()));
-                        console.info("Config is valid.");
-                        return [2 /*return*/, completeConfig];
-                    case 3:
-                        err_1 = _a.sent();
-                        if (err_1 instanceof error_model_1.InvalidTwitchConfigError)
-                            console.log(err_1.message);
-                        throw err_1;
-                    case 4: return [2 /*return*/];
-                }
+define(["require", "exports", "./../models/error.model", "class-validator", "./config.model"], function (require, exports, error_model_1, class_validator_1, config_model_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.ConfigValidator = void 0;
+    var ConfigValidator = /** @class */ (function () {
+        function ConfigValidator() {
+        }
+        ConfigValidator.readConfig = function (configPath) {
+            return __awaiter(this, void 0, void 0, function () {
+                var configJson, completeConfig, completeConfigErrors, err_1;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            configJson = JSON.parse(require('fs').readFileSync(configPath));
+                            _a.label = 1;
+                        case 1:
+                            _a.trys.push([1, 3, , 4]);
+                            console.info("Validating Config...");
+                            completeConfig = new config_model_1.ChatBotConfig(configJson.twitch.token_endpoint, configJson.twitch.username, configJson.twitch.client_id, configJson.twitch.client_secret, configJson.twitch.authorization_code, configJson.twitch.channel);
+                            return [4 /*yield*/, (0, class_validator_1.validate)(completeConfig)];
+                        case 2:
+                            completeConfigErrors = _a.sent();
+                            if (completeConfigErrors.length > 0)
+                                throw new error_model_1.InvalidTwitchConfigError("The provided mothership config is not valid, here are the issues: ".concat(completeConfigErrors.join()));
+                            console.info("Config is valid.");
+                            return [2 /*return*/, completeConfig];
+                        case 3:
+                            err_1 = _a.sent();
+                            if (err_1 instanceof error_model_1.InvalidTwitchConfigError)
+                                console.log(err_1.message);
+                            throw err_1;
+                        case 4: return [2 /*return*/];
+                    }
+                });
             });
-        });
-    };
-    return ConfigValidator;
-}());
-exports.ConfigValidator = ConfigValidator;
+        };
+        return ConfigValidator;
+    }());
+    exports.ConfigValidator = ConfigValidator;
+});
