@@ -34,7 +34,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-import { TwitchTokenDetails } from './../models/twitchTokenDetails.models';
+import { TwitchTokenDetails } from './../models/twitchTokenDetails.models.js';
 //import { validate } from "class-validator";
 const validate = require('class-validator');
 import { InvalidTwitchResponseError } from '../models/error.model.js';

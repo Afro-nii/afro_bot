@@ -4,7 +4,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { IsArray, IsNotEmpty, IsNumber, IsString } from "class-validator";
+//import { IsArray, IsNotEmpty, IsNumber, IsString } from "class-validator";
+const { IsArray, IsNotEmpty, IsNumber, IsString } = require('class-validator');
 var TwitchTokenDetails = /** @class */ (function () {
     function TwitchTokenDetails(access_token, refresh_token, expires_in_secs, scope, token_type) {
         this.access_token = access_token;
