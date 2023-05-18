@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 import { TwitchTokenDetails } from './../models/twitchTokenDetails.models';
 import { validate } from "class-validator";
-import { InvalidTwitchResponseError } from '../models/error.model';
+import { InvalidTwitchResponseError } from '../models/error.model.js';
 var TwitchTokenResponseValidator = /** @class */ (function () {
     function TwitchTokenResponseValidator() {
     }
