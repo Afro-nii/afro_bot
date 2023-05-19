@@ -20,8 +20,6 @@ export class TwitchChatBot {
 
      fs = require('fs');
 
-    mysql = require('mysql2/promise');
-
       path = require('path');
 
      ArrayList = require('arraylist');
@@ -33,12 +31,18 @@ export class TwitchChatBot {
       fetch = require('node-fetch');
 
 
-     pool = this.mysql.createPool({
-  host: 'localhost',
-  user: 'myuser',
-  password: 'mypassword',
-  database: 'mydatabase'
+
+ mysql = require('mysql');
+  connection = this.mysql.createConnection({
+  host: 'sql205.epizy.com',
+  user: 'epiz_34199892',
+  password: 'Afro@nii12',
+  database: 'epiz_34199892_Afro_Bot_Database'
 });
+
+
+// Close the connection
+
 
 
 
@@ -75,7 +79,7 @@ export class TwitchChatBot {
 
     private async fetchAccessToken(): Promise<TwitchTokenDetails> {
         const axios = require('axios');
-       // this.refreshTokenIfNeeded();
+        this.refreshTokenIfNeeded();
         console.log("Fetching Twitch OAuth Token");
         return axios({
             method: 'post',
@@ -110,20 +114,20 @@ export class TwitchChatBot {
         })
     }
 
-/*private refreshTokenIfNeeded() {
+private refreshTokenIfNeeded() {
     const axios = require('axios');
    axios.post('https://id.twitch.tv/oauth2/token', null, {
     params: {    grant_type: 'refresh_token',
         refresh_token: "n7rn1b62quvmom2x2vknqw1usx8qh5q9ra54ogt4fo41tk0si8",
         client_id: this.config.twitchClientId,
         client_secret: this.config.twitchClientSecret,  }}).
-            then(response => {
+            then((response: { data: { access_token: any; }; }) => {
             accessToken = response.data.access_token;
             console.log("Accesstoken: ${accessToken}");})
-            .catch(error => {  console.error(error);});
+            .catch((error: any) => {  console.error(error);});
 
 //TODO if needed - twitch apparently only requires the token on login so it is good enough for now to just get a token on start-up.
-    }*/
+    }
 
     private setupBotBehavior() {
         this.twitchClient.on('message', (channel: any, tags: any, message: any, self: any) => {
@@ -142,12 +146,16 @@ export class TwitchChatBot {
              if(message.startsWith('!despair'))
                 this.twitchClient.say(channel, 'Everything is going to be okay my little Pogchamp. Dont break yo little head over it, will you? <3 <3');
 
-            if(channel === 'mukimooki'){
-            messageCounterMooki++
-            if(messageCounterMooki === 30){
+            if(channel === '#mukimooki'){
+            messageCounterMooki = messageCounterMooki +1;
+            if(messageCounterMooki == 15){
+                console.log(messageCounterMooki);
                 this.twitchClient.say(channel, 'QUASO');
-}
-}
+                messageCounterMooki = 0;
+                }}
+
+           if(message.endsWith('deez nuts') || message.endsWith('deez nuts CoolCat') || message.endsWith('deez nuts KappaRoss'))
+            this.twitchClient.say(channel, 'GOTTTTEEEEEEMMMMM CoolCat');
 
 
              if (message.startsWith('!addDadjoke ') && tags.user === "afronii"){
@@ -246,7 +254,7 @@ export class TwitchChatBot {
     'Client-ID': this.config.twitchClientId,
   };
   try {
-    const response = await this.fetch(url, { headers });
+    const response = await fetch(url, { headers });
     const data = await response.json();
 
      console.log(data);
@@ -278,7 +286,7 @@ export class TwitchChatBot {
     const body = {
       'has_delay': false
     };
-    const response = await this.fetch(url, { method: 'Post', headers, body: JSON.stringify(body) });
+    const response = await fetch(url, { method: 'Post', headers, body: JSON.stringify(body) });
     const data = await response.json();
     if (typeof data !== 'undefined' && data.data.length > 0) {
       return data.data[0].edit_url;
@@ -302,7 +310,7 @@ export class TwitchChatBot {
                 username: `${username}`,
                 password: `oauth:${accessToken}`
             },
-            channels: [`${channel}`, `${"BigBoiMoodyy"}`, `${"Lauroboros"}`]
+            channels: [`${channel}`, `${"BigBoiMoodyy"}`, `${"mukimooki"}`]
         };
     }
 }
