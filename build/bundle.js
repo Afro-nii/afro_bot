@@ -1166,7 +1166,7 @@
         }
     };
     //import { validate } from "class-validator";
-    const validate = new classvalidator();
+    const validate = new classValidator();
     var ConfigValidator = /** @class */ (function () {
         function ConfigValidator() {
         }
