@@ -1,4 +1,4 @@
-import typescript from 'rollup-plugin-typescript2';
+/*import typescript from 'rollup-plugin-typescript2';
 
 export default {
     input: 'src/app.ts', // Replace 'src/index.ts' with the path to your TypeScript entry point
@@ -9,13 +9,14 @@ export default {
     },
     plugins: [typescript()],
 }
-//"exclude": ["./built/**/*"]
+//"exclude": ["./built/**/
 
-/*export default {
+
+export default {
    // input: 'src/app.ts',
-   input: 'app.ts',
+   input: 'build/app.js',
     output: {
-      file: 'dist/bundle.js',
+      file: 'build/bundle.js',
       format: 'umd',
     },
-  };*/
+  };
