@@ -36,7 +36,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 import { InvalidTwitchConfigError } from './../models/error.model.js';
 //import { validate } from "class-validator";
-const validate = require('class-validator');
+const validate = new classvalidator();
+//const validate = require('class-validator');
 import { ChatBotConfig } from "./config.model.js";
 var ConfigValidator = /** @class */ (function () {
     function ConfigValidator() {
@@ -47,7 +48,8 @@ var ConfigValidator = /** @class */ (function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        configJson = JSON.parse(require('fs').readFileSync(configPath));
+                        const configJson = JSON.parse(fs.readFileSync(configPath));
+                        //configJson = JSON.parse(require('fs').readFileSync(configPath));
                         _a.label = 1;
                     case 1:
                         _a.trys.push([1, 3, , 4]);

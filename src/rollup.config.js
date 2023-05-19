@@ -16,7 +16,24 @@ export default {
     }
 //"exclude": ["./built/**/
 
+//import commonjs from 'rollup-plugin-commonjs';
+import commonjs from '@rollup/plugin-commonjs';
+//import resolve from 'rollup-plugin-node-resolve';
+import resolve from '@rollup/plugin-node-resolve';
 
+export default {
+  //input: 'build/app.js',
+  input: '/Users/khoder/Documents/GitHub/afro_bot/build/app.js',
+  output: {
+    file: 'build/bundle.js',
+    format: 'iife',
+  },
+  plugins: [
+    resolve(),
+    commonjs(),
+  ],
+};
+/*
 export default {
    // input: 'src/app.ts',
    input: 'build/app.js',
@@ -25,4 +42,4 @@ export default {
       //format: 'umd',
       format : 'cjs',
     },
-  };
+  };*/
