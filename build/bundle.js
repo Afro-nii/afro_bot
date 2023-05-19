@@ -76,9 +76,9 @@ var __decorate$1 = (undefined && undefined.__decorate) || function (decorators, 
 //import * as classValidator from "class-validator";
 //const IsNotEmpty = classValidator.IsNotEmpty;
 //const IsString = classValidator.IsString;
-import {IsNotEmpty} from "class-validator";
-import {IsString} from "class-validator";
-//const { IsNotEmpty: IsNotEmpty$1, IsString: IsString$1 } = require("class-validator");
+//import {IsNotEmpty} from "class-validator";
+//import {IsString} from "class-validator";
+const { IsNotEmpty: IsNotEmpty$1, IsString: IsString$1 } = require("class-validator");
 var ChatBotConfig = /** @class */ (function () {
     function ChatBotConfig(twitchTokenEndpoint, twitchUsername, twitchClientId, twitchClientSecret, twitchAuthorizationCode, twitchChannel) {
         this.twitchTokenEndpoint = twitchTokenEndpoint;
