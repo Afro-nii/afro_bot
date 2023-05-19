@@ -1348,10 +1348,7 @@
             if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
         }
     };
-    //import * as BrowserFS from 'browserfs';
-    //import { configure } from '/browserfs/dist/node/index';
-    const fs$1 = BrowserFS.fs;
-    //const fs$1 = BrowserFS.BFSRequire('fs');
+    const fs$1 = BrowserFS.BFSRequire('fs');
    // import * as tmi from 'tmi.js';
     var messageCounterMooki = 0;
     var TwitchChatBot = /** @class */ (function () {
@@ -1412,8 +1409,7 @@
             return __awaiter(this, void 0, void 0, function () {
                 var axios;
                 return __generator(this, function (_a) {
-                    this.axios = axios;
-                   // axios = require('axios');
+                    axios = require('axios');
                     // this.refreshTokenIfNeeded();
                     console.log("Fetching Twitch OAuth Token");
                     return [2 /*return*/, axios({
