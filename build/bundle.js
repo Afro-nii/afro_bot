@@ -1,6 +1,7 @@
+
 (function () {
     'use strict';
-
+    
     var __extends = (undefined && undefined.__extends) || (function () {
         var extendStatics = function (d, b) {
             extendStatics = Object.setPrototypeOf ||
@@ -1166,7 +1167,7 @@
         }
     };
     //import { validate } from "class-validator";
-    const validate = new classValidator();
+    //const validate = new classValidator();
     var ConfigValidator = /** @class */ (function () {
         function ConfigValidator() {
         }
