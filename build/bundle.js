@@ -1351,7 +1351,7 @@
     };
     //import * as BrowserFS from 'browserfs';
     //import { configure } from '/browserfs/dist/node/index';
-    const fs$1 = BrowserFS.fs;
+    //const fs$1 = BrowserFS.fs;
     //const fs$1 = BrowserFS.BFSRequire('fs');
    // import * as tmi from 'tmi.js';
     var messageCounterMooki = 0;
