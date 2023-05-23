@@ -37,8 +37,14 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 import { TwitchTokenResponseValidator } from './../utils/TwitchTokenResponseValidator.js';
 import { MalformedTwitchRequestError, NoTwitchResponseError, TwitchResponseError } from '../models/error.model.js';
 //import * as BrowserFS from 'browserfs';
+import * as tmi from 'tmi.js';
+import mysql from 'mysql2/promise';
+import parth from 'path';
+import ArrayList from 'arraylist';
+import fetch from 'node-fetch';
+
 //import { configure } from '/browserfs/dist/node/index';
-const fs = BrowserFS.BFSRequire('fs');
+//const fs = BrowserFS.BFSRequire('fs');
 //import fs from 'fs';
 var authorizationCode;
 var messageCounterMooki = 0;
@@ -48,14 +54,14 @@ var TwitchChatBot = /** @class */ (function () {
     function TwitchChatBot(config) {
         this.config = config;
         //axios = require('axios');
-        this.tmi = require('tmi.js');
-        this.fs = require('fs');
+       // this.tmi = require('tmi.js');
+        /*this.fs = require('fs');
         this.mysql = require('mysql2/promise');
         this.path = require('path');
-        this.ArrayList = require('arraylist');
+        this.ArrayList = require('arraylist');*/
         this.list = [];
         this.QuotesArray = [];
-        this.fetch = require('node-fetch');
+        //this.fetch = require('node-fetch');
         this.pool = this.mysql.createPool({
             host: 'localhost',
             user: 'myuser',

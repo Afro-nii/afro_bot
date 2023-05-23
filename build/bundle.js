@@ -1,6 +1,13 @@
+import * as tmi from 'tmi.js';
+import mysql from 'mysql2/promise';
+import fs from 'fs';
+import parth from 'path';
+import ArrayList from 'arraylist';
+import fetch from 'node-fetch';
 
 (function () {
     'use strict';
+    
     
     var __extends = (undefined && undefined.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -1354,6 +1361,7 @@
     //const fs$1 = BrowserFS.fs;
     //const fs$1 = BrowserFS.BFSRequire('fs');
    // import * as tmi from 'tmi.js';
+   
     var messageCounterMooki = 0;
     var TwitchChatBot = /** @class */ (function () {
         function TwitchChatBot(config) {

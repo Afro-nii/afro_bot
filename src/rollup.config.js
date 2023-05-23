@@ -26,7 +26,8 @@ export default {
   input: '/Users/khoder/Documents/GitHub/afro_bot/build/app.js',
   output: {
     file: 'build/bundle.js',
-    format: 'iife',
+    //format: 'iife',
+    format: 'cjs',
   },
   plugins: [
     resolve(),
