@@ -1,4 +1,4 @@
-import * as tmi from 'tmi.js';
+import tmi from 'tmi.js';
 import mysql from 'mysql2/promise';
 import fs from 'fs';
 import parth from 'path';
