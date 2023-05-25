@@ -1,13 +1,13 @@
 import tmi from 'tmi.js';
 import mysql from 'mysql2/promise';
 import fs from 'fs';
-import parth from 'path';
+import path from 'path';
 import ArrayList from 'arraylist';
 import fetch from 'node-fetch';
 
 (function () {
     'use strict';
-    
+
     
     var __extends = (undefined && undefined.__extends) || (function () {
         var extendStatics = function (d, b) {
